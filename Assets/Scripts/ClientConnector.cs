@@ -14,13 +14,14 @@ enum IngoingRequests
 
 enum OutgoingRequests
 {
-    IncreaseScore = 100,
+    IncreaseScore = 151,
 }
 
 public class ClientConnector : MonoBehaviour {
     string ipV4Regex = "^(?:(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(.(?!$)|$)){4}$";
     public NetworkClient myClient;
     public string IP = "";
+
     public int portNumber = 8888;
 
     public GameObject connectMenu, gameMenu, replayMenu, loadingMenu;
@@ -116,5 +117,10 @@ public class ClientConnector : MonoBehaviour {
             connectMenu.SetActive(true);
             connectMenuText.text = "Error connection unsuccesful: " + IP;
         }
+    }
+
+    public void SendMessage(short increaseScore, MessageBase msg)
+    {
+        myClient.Send(increaseScore, msg);
     }
 }
