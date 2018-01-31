@@ -47,6 +47,8 @@ public class ClientConnector : MonoBehaviour {
 
     public void OnDisconnected(NetworkMessage netMsg)
     {
+        replayMenu.SetActive(false);
+        gameMenu.SetActive(false);
         loadingMenu.SetActive(false);
         connectMenu.SetActive(true);
         connectMenuText.text = "Connection Error: " + IP;
