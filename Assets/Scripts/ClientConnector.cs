@@ -22,7 +22,7 @@ public class ClientConnector : MonoBehaviour {
     public NetworkClient myClient;
     public string IP = "";
 
-    public int portNumber = 8888;
+    public int portNumber = 50000;
 
     public GameObject connectMenu, gameMenu, replayMenu, loadingMenu;
     public TMP_Text connectMenuText, loadingMenuText;
