@@ -15,6 +15,7 @@ enum IngoingRequests
 enum OutgoingRequests
 {
     IncreaseScore = 151,
+    ReplayAction = 152,
 }
 
 public class ClientConnector : MonoBehaviour {
